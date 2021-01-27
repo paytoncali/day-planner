@@ -110,19 +110,13 @@
                 } else if (i == currentHour) {
                     $("#" + i).children("textarea").addClass("present");
                 };
-
-                var toStore = localStorage.getItem(i);
-
             };
 
             $(".saveBtn").on("click", function(){
                 var idEl = $(this).parent().attr("id")
                 var textAreaVal = $(this).siblings("textarea").val()
                 localStorage.setItem(idEl, textAreaVal)
-
-            });
-        
-            var pinnedTasks = JSON.parse(localStorage).getItem(i);
+            });        
         });
 
     </script>
