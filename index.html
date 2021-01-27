@@ -102,17 +102,21 @@
             var currentHour = new Date().getHours();
 
 
-            for (i = 9; i < 25; i++) {
+            for (i = 0; i < 25; i++) {
                 if (i > currentHour) {
-                    $("#" + i).children("textarea").addClass("future")
+                    $("#" + i).children("textarea").addClass("future");
                 } else if (i < currentHour) {
-                    $("#" + i).children("textarea").addClass("past")
+                    $("#" + i).children("textarea").addClass("past");
                 } else if (i == currentHour) {
-                    $("#" + i).children("textarea").addClass("present")
-                }
+                    $("#" + i).children("textarea").addClass("present");
+                };
+            };
 
-            }
-        })
+            $(".saveBtn").on("click", function(){
+
+
+            });
+        });
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
