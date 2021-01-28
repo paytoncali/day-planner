@@ -101,7 +101,15 @@
 
             var currentHour = new Date().getHours();
 
+            $(".saveBtn").on("click", function(event){
+                event.preventDefault();
 
+                var idEl = $(this).parent().attr("id")
+                var textAreaVal = $(this).siblings("textarea").val()
+
+                localStorage.setItem(idEl, textAreaVal);
+            });        
+        
             for (i = 0; i < 25; i++) {
                 if (i > currentHour) {
                     $("#" + i).children("textarea").addClass("future");
@@ -112,11 +120,15 @@
                 };
             };
 
-            $(".saveBtn").on("click", function(){
-                var idEl = $(this).parent().attr("id")
-                var textAreaVal = $(this).siblings("textarea").val()
-                localStorage.setItem(idEl, textAreaVal)
-            });        
+            function showtasks() {
+                toDoList.innerHTML = "";
+                var tasks = localStorage.getItem("textarea");
+                tasts.append(toDoList);
+
+            }
+            
+            showtasks();
+ 
         });
 
     </script>
