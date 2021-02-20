@@ -101,17 +101,16 @@
 
             var currentHour = new Date().getHours();
 
-            $(".saveBtn").on("click", function (event) {
+            $(".saveBtn").on("click", function(event){
                 event.preventDefault();
 
                 var idEl = $(this).parent().attr("id")
                 var textAreaVal = $(this).siblings("textarea").val()
-                localStorage.setItem(idEl, textAreaVal);;
 
-                // var nine = $("#9").children(".col-9");
-                // nine.localStorage.get("9");
-            });
+                localStorage.setItem(idEl, textAreaVal);
 
+            });        
+        
             for (i = 0; i < 25; i++) {
                 if (i > currentHour) {
                     $("#" + i).children("textarea").addClass("future");
@@ -120,9 +119,25 @@
                 } else if (i == currentHour) {
                     $("#" + i).children("textarea").addClass("present");
                 };
+
             };
 
+            // var nine = $("#9").children(".col-1");
+            // nine.localStorage.getItem("9")
+            // $("#9").children(".col-1 hour").localStorage.getItem("9");
 
+
+            
+
+            // function showtasks() {
+
+            //     var toDoList = document.getElementsByTagName("textarea");
+            //     toDoList.innerHTML = "";
+
+            // }
+            
+            // showtasks();
+ 
         });
 
     </script>
